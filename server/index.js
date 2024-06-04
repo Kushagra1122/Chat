@@ -21,14 +21,14 @@ app.use(express.json())
 
 
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.use("/api/auth", router1)
 
 app.use("/api/message", router2)
 
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+);
 mongoose
     .connect(process.env.URI, {
 
