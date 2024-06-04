@@ -11,10 +11,13 @@ const Messages = ({id,handleSubmit}) => {
         const [Socket, setSocket] = useSocket(null);
   
     const getmsg=async()=>{
-   const response = await fetch(`${window.location.origin}/api/message/${id}`, {
+   const response = await fetch(`http://localhost:9000/api/message/${id}`, {
      method: "GET",
      headers: {
        Authorization: auth?.token,
+      
+       
+       
      },
    });
   

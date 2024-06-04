@@ -1,6 +1,6 @@
 const conversationData = require("../model/conversation")
 const messageData = require("../model/message")
-const {getReceiverSocketId, io}=require('../socket/socket')
+const { getReceiverSocketId, io } = require('../socket/socket')
 const sendMessage = async (req, res) => {
     try {
         const senderId = req.id;
@@ -47,13 +47,13 @@ const getMessage = async (req, res) => {
         const conversation = await conversationData.findOne({
             participants: { $all: [senderId, receiverId] }
         }).populate("messages");
-        if(conversation){
-            return res.status(200).json({"data":conversation?.messages});
+        if (conversation) {
+            return res.status(200).json({ "data": conversation?.messages });
         }
-        else{
-            return res.status(200).json({"data":null})
+        else {
+            return res.status(200).json({ "data": null })
         }
-      
+
     } catch (error) {
         console.log(error);
     }

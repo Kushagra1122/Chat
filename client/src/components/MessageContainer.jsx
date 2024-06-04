@@ -12,19 +12,16 @@ const MessageContainer = () => {
 e.preventDefault()
   console.log(msg);
 try {
-  const response = await fetch(
-    `${window.location.origin}/api/message/send/${selected.user._id}`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: auth?.token,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: msg,
-      }),
-    }
-  );
+  const response = await fetch(`http://localhost:9000/api/message/send/${selected.user._id}`, {
+    method: "POST",
+    headers: {
+      Authorization: auth?.token,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      "message":msg
+    }),
+  });
 
   const res = await response.json();
 if(response.ok){

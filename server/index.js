@@ -20,6 +20,7 @@ app.use(cors(corsOption));
 app.use(express.json())
 
 
+const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.use("/api/auth", router1)
 

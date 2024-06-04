@@ -14,7 +14,7 @@ const MessageContainer = () => {
     console.log(msg);
     try {
       const response = await fetch(
-        `${window.location.origin}/api/message/send/${selected.user._id}`,
+        `http://localhost:9000/api/message/send/${selected.user._id}`,
         {
           method: "POST",
           headers: {
@@ -42,7 +42,7 @@ const MessageContainer = () => {
           {selected.user?._id ? (
             <div className="text-2xl flex flex-col justify-between ">
               <div className="flex gap-3 p-2 items-center h-16 bg-gray-500 rounded-xl text-white">
-                <button onClick={() => setselected({})} className="py-2 ">
+                <button onClick={() => setselected({})} className="py-2 text-black">
                   <IoIosBackspace size={30} />
                 </button>
                 <img

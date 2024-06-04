@@ -71,9 +71,9 @@ const login = async (req, res) => {
                 fullName: user.fullName,
                 profile_pic: user.profile_pic
             },
-           
-                token,
-           
+
+            token,
+
 
 
         });
