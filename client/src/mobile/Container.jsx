@@ -14,7 +14,7 @@ const MessageContainer = () => {
     console.log(msg);
     try {
       const response = await fetch(
-        `http://localhost:9000/api/message/send/${selected.user._id}`,
+        `${window.location.origin}/api/message/send/${selected.user._id}`,
         {
           method: "POST",
           headers: {
