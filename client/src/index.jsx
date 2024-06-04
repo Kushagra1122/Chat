@@ -6,14 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/auth';
 import { SelectedProvider } from './context/selected';
-
+import { SocketProvider } from './context/socket';
+import { OnlineProvider } from './context/online';
+import "antd/dist/reset.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
       <SelectedProvider>
-        <App />
-        <Toaster />
+        <SocketProvider>
+          <OnlineProvider>
+            <App />
+            <Toaster />
+          </OnlineProvider>
+        </SocketProvider>
       </SelectedProvider>
     </AuthProvider>
   </React.StrictMode>

@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useAuth } from '../context/auth';
 import { useSelected } from '../context/selected';
 import moment from "moment";
 const Message = ({datas}) => {
      const [auth, setAuth] = useAuth();
      const [selected, setselected] = useSelected("");
-     
+        const scroll = useRef();
+         useEffect(() => {
+           scroll.current?.scrollIntoView({ behavior: "smooth" });
+         }, [datas]);
     console.log(datas)
   return (
     <div>
       {datas !== undefined ? (
         <div>
           {datas.map((data) => (
-            <div>
+            <div ref={scroll}>
               {data.senderId === selected.user._id ? (
                 <div className="flex justify-start p-2">
                   <div className="flex items-start gap-2.5 ">
@@ -21,9 +24,9 @@ const Message = ({datas}) => {
                       src={`${selected.user.profile_pic}`}
                       alt="Sender image"
                     />
-                    <div className="flex flex-col w-full max-w-[320px] leading-1.5  py-1 px-5 border border-black bg-indigo-300 rounded-e-xl rounded-es-xl ">
+                    <div className="flex flex-col w-full max-w-[320px]    px-5 border border-black bg-indigo-300 rounded-e-xl rounded-es-xl ">
                       <div className="flex items-center  "></div>
-                      <p className="text-2xl font-serif py-2.5 text-gray-900 ">
+                      <p className="text font-serif  text-gray-900 ">
                         {data.message}
                       </p>
                       <span className="text-gray-700 text-sm">
@@ -33,10 +36,10 @@ const Message = ({datas}) => {
                   </div>
                 </div>
               ) : (
-                <div className="flex justify-end p-2">
+                <div className="flex justify-end py-5">
                   <div className="flex items-start gap-2.5 ">
-                    <div className="flex flex-col w-full max-w-[320px] leading-1.5 py-1 px-5 border border-black bg-indigo-300 rounded-b-xl rounded-l-xl">
-                      <p className="text-2xl font-serif py-2.5 text-gray-900 ">
+                    <div className="flex flex-col w-full max-w-[320px]  px-5 border border-black bg-indigo-300 rounded-b-xl rounded-l-xl">
+                      <p className="text font-serif  text-gray-900 ">
                         {data.message}
                       </p>
                       <span className="text-gray-700 text-sm">

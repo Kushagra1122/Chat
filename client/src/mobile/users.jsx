@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -6,31 +7,31 @@ import { useNavigate } from "react-router-dom";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import OtherUsers from "../components/OtherUsers";
 import { useAuth } from "../context/auth";
-import { Modal } from "antd";
+import {  Modal } from "antd";
 
 const Users = () => {
-  const navigate = useNavigate();
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const logout = () => {
-    setAuth({
-      ...auth,
-      user: null,
-      token: "",
-    });
-
-    localStorage.removeItem("auth");
-
-    toast.success("You have logged out ");
-    navigate("/login");
-  };
-  const [search, setSearch] = useState("");
-  const [auth, setAuth] = useAuth("");
+      const navigate = useNavigate();
+      const handleCancel = () => {
+        setIsModalOpen(false);
+      };
+     const [isModalOpen, setIsModalOpen] = useState(false);
+     const showModal = () => {
+       setIsModalOpen(true);
+     }
+ const logout = () => {
+   setAuth({
+     ...auth,
+     user: null,
+     token: "",
+   });
+ 
+   localStorage.removeItem("auth");
+  
+   toast.success("You have logged out ");
+   navigate("/login");
+ };
+     const [search, setSearch] = useState("");
+       const [auth, setAuth] = useAuth("");
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
       <div className="flex  height overflow-auto  flex-col">
@@ -58,7 +59,12 @@ const Users = () => {
         <div>
           <OtherUsers />
         </div>
-        <Modal open={isModalOpen} footer={null} onCancel={handleCancel}>
+        <Modal
+          
+          open={isModalOpen}
+          footer={null}
+          onCancel={handleCancel}
+        >
           <div className="flex flex-col w-24 h-24 gap-2 items-center">
             <img
               src={`${auth?.user?.profile_pic}`}
@@ -79,6 +85,6 @@ const Users = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Users;
+export default Users

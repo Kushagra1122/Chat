@@ -6,7 +6,7 @@ const router1 = require("./router/user")
 const router2 = require("./router/message")
 const cookieParser = require("cookie-parser");
 
-const app = express()
+const {app,server}=require('./socket/socket')
 app.use(cookieParser());
 require("dotenv").config()
 
@@ -37,7 +37,7 @@ mongoose
         console.log(err.message);
     });
 const port = process.env.PORT
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Started at ${port}`)
 })
 

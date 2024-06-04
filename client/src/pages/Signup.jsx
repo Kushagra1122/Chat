@@ -67,13 +67,13 @@ try {
   
   return (
     <div className="bg-gradient-to-r  from-yellow-400 via-pink-300 to-blue-400 ">
-      <div className="flex flex-col gap-5 justify-center items-center h-screen">
+      <div className="flex flex-col gap-10 justify-center items-center h-screen">
         <div className=" text-3xl flex gap-3 justify-center">
           <IoChatbubbleEllipsesOutline size={35} />
           Chatify
         </div>
         <Zoom>
-          <div className="bg-white  w-96 rounded-xl shadow-lg shadow-black p-5">
+          <div className="bg-white  w-80 rounded-xl shadow-lg shadow-black p-5">
             <div className="flex flex-col gap-5 items-center m-5 ">
               <span className="text-2xl">Sign Up</span>
               <span className="text-sm">Create Your Account</span>
@@ -82,7 +82,7 @@ try {
             <form onSubmit={onSubmitHandler}>
               <div className="flex flex-col items-center m-5">
                 <input
-                  className="w-80  h-10 p-5 rounded-xl border border-black bg-pink-100 "
+                  className="w-72  h-10 p-5 rounded-xl border border-black bg-pink-100 "
                   type="text"
                   placeholder="Full Name"
                   required="required"
@@ -92,7 +92,7 @@ try {
               </div>
               <div className="flex flex-col items-center m-5">
                 <input
-                  className="w-80  h-10 p-5 rounded-xl border border-black bg-pink-100 "
+                  className="w-72  h-10 p-5 rounded-xl border border-black bg-pink-100 "
                   type="text"
                   placeholder="Username"
                   required="required"
@@ -102,7 +102,7 @@ try {
               </div>
               <div className="flex flex-col items-center m-5">
                 <input
-                  className="w-80 input input-bordered h-10 p-5 rounded-xl border border-black bg-pink-100 "
+                  className="w-72 input input-bordered h-10 p-5 rounded-xl border border-black bg-pink-100 "
                   type="password"
                   placeholder="Password"
                   required="required"
@@ -112,7 +112,7 @@ try {
               </div>
               <div className="flex flex-col items-center m-5">
                 <input
-                  className="w-80  h-10 p-5 rounded-xl border border-black bg-pink-100 "
+                  className="w-72  h-10 p-5 rounded-xl border border-black bg-pink-100 "
                   type="password"
                   placeholder="Confirm Password"
                   required="required"
@@ -144,7 +144,7 @@ try {
                 </div>
               </div>
               <div className="flex flex-col items-center m-5">
-                <button className="w-80 h-10  rounded-full border border-black bg-pink-400 hover:bg-white  ">
+                <button className="w-72 h-10  rounded-full border border-black bg-pink-400 hover:bg-white  ">
                   Register
                 </button>
               </div>
