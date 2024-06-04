@@ -12,7 +12,7 @@ const OtherUsers = () => {
     const[online,setOnline]=useOnline()
     const get=async()=>{
         if(auth.token!==""){
-const response = await fetch("http://localhost:9000/api/auth/get", {
+const response = await fetch(`${window.location.origin}/api/auth/get`, {
   method: "GET",
   headers: {
     Authorization: auth?.token,
