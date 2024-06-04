@@ -52,8 +52,7 @@ try {
     toast.error(res.message);
   }
 } catch (error) {
-
-  console.log(error);
+console.log(error);
 }
     }
   return (
