@@ -8,8 +8,10 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import OtherUsers from "../components/OtherUsers";
 import { useAuth } from "../context/auth";
 import {  Modal } from "antd";
+import { useOnline } from "../context/online";
 
 const Users = () => {
+      const [Online, setOnline] = useOnline();
       const navigate = useNavigate();
       const handleCancel = () => {
         setIsModalOpen(false);
@@ -23,7 +25,9 @@ const Users = () => {
      ...auth,
      user: null,
      token: "",
+     
    });
+   setOnline({});
  
    localStorage.removeItem("auth");
   

@@ -7,9 +7,13 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import OtherUsers from "../components/OtherUsers";
 import { useAuth } from "../context/auth";
 import { Modal } from "antd";
+import { useOnline } from "../context/online";
 
 const Users = () => {
   const navigate = useNavigate();
+
+  const [Online, setOnline] = useOnline();
+ 
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -23,12 +27,21 @@ const Users = () => {
       user: null,
       token: "",
     });
+     const logout = () => {
+   setAuth({
+     ...auth,
+     user: null,
+     token: "",
+     
+   });
+   setOnline({});
 
     localStorage.removeItem("auth");
 
     toast.success("You have logged out ");
     navigate("/login");
   };
+}
   const [search, setSearch] = useState("");
   const [auth, setAuth] = useAuth("");
   return (
