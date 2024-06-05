@@ -13,7 +13,7 @@ e.preventDefault()
   console.log(msg);
 try {
   const response = await fetch(
-    `${window.location.origin}/api/message/send/${selected.user._id}`,
+    `http://localhost:9000/api/message/send/${selected.user._id}`,
     {
       method: "POST",
       headers: {

@@ -8,6 +8,8 @@ import OtherUsers from "../components/OtherUsers";
 import { useAuth } from "../context/auth";
 import { Modal } from "antd";
 import { useOnline } from "../context/online";
+import { useSocket } from "../context/socket";
+import { useSelected } from "../context/selected";
 
 const Users = () => {
   const navigate = useNavigate();
@@ -27,23 +29,19 @@ const Users = () => {
       user: null,
       token: "",
     });
-     const logout = () => {
-   setAuth({
-     ...auth,
-     user: null,
-     token: "",
-     
-   });
-   setOnline({});
-
+  
+     setselected(null);
     localStorage.removeItem("auth");
 
     toast.success("You have logged out ");
     navigate("/login");
   };
-}
-  const [search, setSearch] = useState("");
-  const [auth, setAuth] = useAuth("");
+
+
+const [search, setSearch] = useState("");
+const [auth, setAuth] = useAuth("");
+const [Socket, setSocket] = useSocket("");
+const [selected, setselected] = useSelected("");
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
       <div className="flex  height overflow-auto  flex-col">

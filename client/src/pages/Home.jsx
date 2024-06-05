@@ -40,7 +40,7 @@ const Home = () => {
         </div>
         <div className="small bg-white  rounded-xl shadow-lg shadow-black p-4">
         {
-          selected.user?(<><Container/></>):(<><Users/></>)
+          selected?.user?(<><Container/></>):(<><Users/></>)
         }
         </div>
       </div>

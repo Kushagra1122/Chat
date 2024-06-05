@@ -18,7 +18,7 @@ function App() {
   useEffect(()=>{
 if (auth.token !== "") {
   console.log("here");
-  const socket = io(`${window.location.origin}`, {
+  const socket = io(`http://localhost:9000`, {
     query: {
       id: auth.user._id,
     },
@@ -27,11 +27,14 @@ if (auth.token !== "") {
   socket?.on("getOnlineUsers", (onlineUsers) => {
     setOnline(onlineUsers);
   });
-
-} 
-
-
-
+   return () => socket.close();
+}
+else{
+      if(Socket){
+     
+    setSocket(null);
+      }
+    }
   },[auth])
   console.log(Socket)
   console.log(Online);

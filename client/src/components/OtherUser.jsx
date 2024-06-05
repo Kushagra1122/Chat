@@ -1,10 +1,14 @@
 import React from 'react'
 import { RiRadioButtonLine } from "react-icons/ri";
 import { useOnline } from '../context/online';
+
 const OtherUser = ({user}) => {
       const [Online, setOnline] = useOnline();
+      console.log(Online)
       const isOnline = Online?.includes(user._id);
+     
   return (
+
     <div className="p-3 ">
       <div className="flex justify-between gap-2 items-center ">
         <div className="flex items-center gap-2">
@@ -15,11 +19,11 @@ const OtherUser = ({user}) => {
           />
           <span className="text-lg">{user.fullName}</span>
         </div>
-        {isOnline?( <span className="text-green-600">
-          <RiRadioButtonLine />
+       {
+        isOnline?(<span className='text-green-700'>
+          <RiRadioButtonLine/>
         </span>):(<></>)
-
-        }
+       }
        
       </div>
     </div>
