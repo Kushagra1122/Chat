@@ -43,7 +43,7 @@ const Users = () => {
         const [selected,setselected]=useSelected()
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
-      <div className="flex  height overflow-auto  flex-col">
+      <div className="flex    flex-col">
         <div className=" text-lg flex gap-5  justify-center ">
           <button onClick={showModal} className="cursor-pointer py-2">
             <img

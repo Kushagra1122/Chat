@@ -12,7 +12,7 @@ const OtherUsers = () => {
     const[online,setOnline]=useOnline()
     const get=async()=>{
         if(auth.token!==""){
-const response = await fetch(`http://localhost:9000/api/auth/get`, {
+const response = await fetch(`${window.location.origin}/api/auth/get`, {
   method: "GET",
   headers: {
     Authorization: auth?.token,
@@ -32,29 +32,31 @@ get()
     },[])
     console.log(selected)
   return (
-    <div className="flex flex-col justify-center  gap-5  m-5">
-      {other.map((user) => (
-        <JackInTheBox>
-          <div
-            key={user._id}
-            onClick={() =>
-              setselected({
-                user
-              })
-            }
-          >
+    <div className='overflow-auto userheight py-5'>
+      <div className="flex flex-col justify-center  gap-5  m-5">
+        {other.map((user) => (
+          <JackInTheBox>
             <div
-              className={`rounded-xl overflow-hidden shadow-xl cursor-pointer  transition ease-in-out border  border-black ${
-                selected.user?._id === user._id
-                  ? `bg-indigo-300`
-                  : `hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300 `
-              }`}
+              key={user._id}
+              onClick={() =>
+                setselected({
+                  user,
+                })
+              }
             >
-              <OtherUser user={user}/>
+              <div
+                className={`rounded-xl overflow-hidden shadow-xl cursor-pointer  transition ease-in-out border  border-black ${
+                  selected.user?._id === user._id
+                    ? `bg-indigo-300`
+                    : `hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300 `
+                }`}
+              >
+                <OtherUser user={user} />
+              </div>
             </div>
-          </div>
-        </JackInTheBox>
-      ))}
+          </JackInTheBox>
+        ))}
+      </div>
     </div>
   );
 }

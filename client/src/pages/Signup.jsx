@@ -26,7 +26,7 @@ const [gender, setgender] = useState("");
     e.preventDefault();
    if(gender!==""){
 try {
-  const response = await fetch(`http://localhost:9000/api/auth/register`, {
+  const response = await fetch(`${window.location.origin}/api/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

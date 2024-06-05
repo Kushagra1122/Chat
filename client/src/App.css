@@ -17,6 +17,9 @@
 .newheight{
   height: 450px;
 }
+.userheight {
+  height: 475px;
+}
  @media only screen and (max-width: 964px) {
   .big {
     display: none;
