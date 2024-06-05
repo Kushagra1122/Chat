@@ -12,7 +12,7 @@ require("dotenv").config()
 
 
 const corsOption = {
-    //origin: 'http://localhost:3000',
+    origin: ['https://chat-32gb.onrender.com'],
     credentials: true
 };
 app.use(cors(corsOption));
