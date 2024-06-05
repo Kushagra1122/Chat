@@ -1,9 +1,9 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const router1 = require("./server/router/user")
+const router1 = require("./router/user")
 
-const router2 = require("./server/router/message")
+const router2 = require("./router/message")
 const cookieParser = require("cookie-parser");
 const path = require("path")
 const { app, server } = require('./socket/socket')
