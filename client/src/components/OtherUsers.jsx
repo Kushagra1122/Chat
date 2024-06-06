@@ -30,7 +30,7 @@ if(response.ok){
     useEffect(()=>{
 get()
     },[])
-    console.log(selected)
+
   return (
     <div className='overflow-auto userheight py-5'>
       <div className="flex flex-col justify-center  gap-5  m-5">

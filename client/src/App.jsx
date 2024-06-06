@@ -17,8 +17,8 @@ function App() {
   
   useEffect(()=>{
 if (auth.token !== "") {
-  console.log("here");
-  const socket = io(`https://chatify-yz2w.onrender.com/`, {
+
+  const socket = io(`https://chatify-yz2w.onrender.com`, {
     query: {
       id: auth.user._id,
     },
@@ -31,8 +31,7 @@ if (auth.token !== "") {
 }
 
   },[auth])
-  console.log(Socket)
-  console.log(Online);
+
   return (
     <div>
       <BrowserRouter>

@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: [`https://chatify-yz2w.onrender.com/`],
+        origin: [`https://chatify-yz2w.onrender.com`],
         methods: ['GET', 'POST'],
     },
 });

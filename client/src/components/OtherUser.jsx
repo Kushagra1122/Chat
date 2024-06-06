@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { RiRadioButtonLine } from "react-icons/ri";
 import { useOnline } from '../context/online';
 
 const OtherUser = ({user}) => {
       const [Online, setOnline] = useOnline();
-      const[isOnline,setisOnline]=useState("")
-    if (Online !== undefined) {
-      setisOnline( Online?.includes(user._id));
-    }
+     
+      const isOnline = Online?.includes(user._id);
+     
   return (
 
     <div className="p-3 ">
@@ -21,8 +20,7 @@ const OtherUser = ({user}) => {
           <span className="text-lg">{user.fullName}</span>
         </div>
        {
- 
-        isOnline!==""?(<span className='text-green-700'>
+        isOnline?(<span className='text-green-700'>
           <RiRadioButtonLine/>
         </span>):(<></>)
        }

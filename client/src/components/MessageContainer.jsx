@@ -10,7 +10,7 @@ const MessageContainer = () => {
   const [msg, setmsg] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(msg);
+  
     try {
       const response = await fetch(
         `${window.location.origin}/api/message/send/${selected.user._id}`,
