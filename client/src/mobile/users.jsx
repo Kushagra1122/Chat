@@ -42,7 +42,7 @@ const Users = () => {
         const [selected,setselected]=useSelected()
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
-      <div className="flex    flex-col">
+      <div className="flex width   flex-col">
         <div className=" text-lg flex gap-5  justify-center ">
           <button onClick={showModal} className="cursor-pointer py-2">
             <img
@@ -55,7 +55,7 @@ const Users = () => {
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="border border-black rounded-md px-2 "
+              className="border border-black rounded-md w-52 px-2 "
               type="text"
               placeholder="Search..."
             />
