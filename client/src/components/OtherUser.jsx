@@ -4,7 +4,7 @@ import { useOnline } from '../context/online';
 
 const OtherUser = ({user}) => {
       const [Online, setOnline] = useOnline();
-      const[isOnline,setisOnline]=useState()
+      const[isOnline,setisOnline]=useState("")
     if (Online !== undefined) {
       setisOnline( Online?.includes(user._id));
     }
@@ -22,7 +22,7 @@ const OtherUser = ({user}) => {
         </div>
        {
  
-        isOnline?(<span className='text-green-700'>
+        isOnline!==""?(<span className='text-green-700'>
           <RiRadioButtonLine/>
         </span>):(<></>)
        }
