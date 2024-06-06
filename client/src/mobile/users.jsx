@@ -42,7 +42,7 @@ const Users = () => {
         const [selected,setselected]=useSelected()
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
-      <div className="flex    flex-col">
+      <div className="flex  width    flex-col">
         <div className=" text-lg flex gap-5  justify-center ">
           <button onClick={showModal} className="cursor-pointer py-2">
             <img
@@ -67,12 +67,7 @@ const Users = () => {
         <div>
           <OtherUsers />
         </div>
-        <Modal
-          
-          open={isModalOpen}
-          footer={null}
-          onCancel={handleCancel}
-        >
+        <Modal open={isModalOpen} footer={null} onCancel={handleCancel}>
           <div className="flex flex-col w-24 h-24 gap-2 items-center">
             <img
               src={`${auth?.user?.profile_pic}`}
