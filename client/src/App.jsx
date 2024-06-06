@@ -18,7 +18,7 @@ function App() {
   useEffect(()=>{
 if (auth.token !== "") {
   console.log("here");
-  const socket = io(`${window.location.origin}`, {
+  const socket = io(`https://chat-32gb.onrender.com`, {
     query: {
       id: auth.user._id,
     },
