@@ -51,7 +51,7 @@ const Users = () => {
               className="h-10 w-10"
             />
           </button>
-          <form className="flex items-center  gap-2">
+          <form className="flex w-72 items-center  gap-2">
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
