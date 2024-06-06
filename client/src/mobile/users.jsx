@@ -36,7 +36,6 @@ const Users = () => {
    toast.success("You have logged out ");
    navigate("/login");
  };
- console.log(Online)
      const [search, setSearch] = useState("");
        const [auth, setAuth] = useAuth("");
         const [Socket, setSocket] = useSocket(null);

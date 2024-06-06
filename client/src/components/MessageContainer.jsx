@@ -32,7 +32,7 @@ const MessageContainer = () => {
       console.log(error);
     }
   };
-  console.log(selected);
+
   return (
     <div className="border border-black rounded-xl bg-pink-100 ">
       <div className=" width ">

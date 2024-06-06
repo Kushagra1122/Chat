@@ -9,7 +9,6 @@ const Message = ({datas}) => {
          useEffect(() => {
            scroll.current?.scrollIntoView({ behavior: "smooth" });
          }, [datas]);
-    console.log(datas)
   return (
     <div>
       {datas !== undefined ? (
