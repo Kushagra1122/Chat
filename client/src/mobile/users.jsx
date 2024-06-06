@@ -42,7 +42,7 @@ const Users = () => {
         const [selected,setselected]=useSelected()
   return (
     <div className="border border-black p-2 rounded-xl bg-pink-100 ">
-      <div className="flex  width    flex-col">
+      <div className="flex    flex-col">
         <div className=" text-lg flex gap-5  justify-center ">
           <button onClick={showModal} className="cursor-pointer py-2">
             <img
@@ -51,7 +51,7 @@ const Users = () => {
               className="h-10 w-10"
             />
           </button>
-          <form className="flex w-72 items-center  gap-2">
+          <form className="flex items-center  gap-2">
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -67,7 +67,12 @@ const Users = () => {
         <div>
           <OtherUsers />
         </div>
-        <Modal open={isModalOpen} footer={null} onCancel={handleCancel}>
+        <Modal
+          
+          open={isModalOpen}
+          footer={null}
+          onCancel={handleCancel}
+        >
           <div className="flex flex-col w-24 h-24 gap-2 items-center">
             <img
               src={`${auth?.user?.profile_pic}`}
