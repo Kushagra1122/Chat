@@ -56,7 +56,7 @@ const MessageContainer = () => {
                     <input
                       type="text"
                       placeholder="Send a message..."
-                      className="border text-lg rounded-xl block w-full py-3 px-7 border-black"
+                      className="border text-lg rounded-xl block w-full py-3 px-10 border-black"
                       value={msg}
                       onChange={(e) => setmsg(e.target.value)}
                     />
