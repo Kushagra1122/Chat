@@ -24,7 +24,7 @@ const Message = ({datas}) => {
                       alt="Sender image"
                     />
                     <div className="flex flex-col w-full max-w-[320px]    px-5 border border-black bg-indigo-300 rounded-e-xl rounded-es-xl ">
-                      <div className="flex items-center  "></div>
+                      <div className="flex  flex-wrap items-center  "></div>
                       <p className="text font-serif  text-gray-900 ">
                         {data.message}
                       </p>

@@ -56,7 +56,10 @@ const [selected, setselected] = useSelected("");
               className="h-10 w-10"
             />
           </button>
-          <form onSubmit={handlesearch}className="flex items-center  gap-2">
+          <form
+            onSubmit={handlesearch}
+            className="flex items-center  flex-wrap   gap-2"
+          >
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
