@@ -23,8 +23,7 @@ const Message = ({datas}) => {
                       src={`${selected.user.profile_pic}`}
                       alt="Sender image"
                     />
-                    <div className="flex flex-col w-full max-w-[320px]    px-5 border border-black bg-indigo-300 rounded-e-xl rounded-es-xl ">
-                      <div className="flex  flex-wrap items-center  "></div>
+                    <div className="flex flex-wrap flex-col w-full max-w-[320px] px-5 border border-black bg-indigo-300 rounded-e-xl rounded-es-xl ">
                       <p className="text font-serif  text-gray-900 ">
                         {data.message}
                       </p>
@@ -35,7 +34,7 @@ const Message = ({datas}) => {
                   </div>
                 </div>
               ) : (
-                <div className="flex justify-end py-5">
+                <div className="flex justify-end p-2">
                   <div className="flex items-start gap-2.5 ">
                     <div className="flex flex-col w-full max-w-[320px]  px-5 border border-black bg-indigo-300 rounded-b-xl rounded-l-xl">
                       <p className="text font-serif  text-gray-900 ">
